@@ -1,32 +1,33 @@
 {
-  "name": "@hswong3i/leaflet-fullscreen",
-  "version": "1.0.3-alpha1",
-  "description": "A fullscreen control for Leaflet",
-  "main": "dist/Leaflet.fullscreen.js",
-  "directories": {
-    "example": "examples"
-  },
-  "scripts": {
-    "test": "jshint src/Leaflet.fullscreen.js",
-    "uglifyjs": "uglifyjs src/Leaflet.fullscreen.js > dist/Leaflet.fullscreen.min.js",
-    "sass": "sass -s compressed src/Leaflet.fullscreen.scss dist/Leaflet.fullscreen.min.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Leaflet/Leaflet.fullscreen.git"
-  },
-  "keywords": [
-    "leaflet",
-    "maps",
-    "fullscreen",
-    "client"
-  ],
-  "devDependencies": {
-    "jshint": "^2.13.1",
-    "sass": "^1.43.5",
-    "uglify-js": "^3.14.3"
-  },
-  "author": "John Firebaugh",
-  "license": "ISC",
-  "readmeFilename": "README.md"
+    "author": "John Firebaugh",
+    "description": "A fullscreen control for Leaflet",
+    "devDependencies": {
+        "eslint": "~8.5.0",
+        "sass": "~1.44.0",
+        "uglify-js": "~3.14.4"
+    },
+    "directories": {
+        "example": "examples"
+    },
+    "keywords": [
+        "leaflet",
+        "maps",
+        "fullscreen",
+        "client"
+    ],
+    "license": "ISC",
+    "main": "dist/Leaflet.fullscreen.js",
+    "name": "@drustack/leaflet-fullscreen",
+    "readmeFilename": "README.md",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Leaflet/Leaflet.fullscreen.git"
+    },
+    "scripts": {
+        "build": "npm run eslint && npm run uglifyjs && npm run sass",
+        "sass": "sass -s compressed src/Leaflet.fullscreen.scss dist/Leaflet.fullscreen.min.css",
+        "eslint": "eslint --fix src/Leaflet.fullscreen.js",
+        "uglifyjs": "uglifyjs src/Leaflet.fullscreen.js -c -m --source-map -o dist/Leaflet.fullscreen.min.js"
+    },
+    "version": "1.0.3-alpha2"
 }
